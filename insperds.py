@@ -1,4 +1,6 @@
 import requests
+import random
+import string
 
 def ddgquery(query):
     URL = "https://api.duckduckgo.com/?format=json&pretty=0&q=" + query
@@ -25,8 +27,16 @@ def weather(latitude, longitude):
     URL = f'https://api.openweathermap.org/data/2.5/weather?lat=' + str(latitude) + '&lon=' + str(longitude) + '&appid='+ KEY
     return requests.get(URL).json()
 
+def newpassword(size=32):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    characters = characters.replace("'","").replace('"',"").replace("\\","")
+
+    return ''.join(random.choice(characters) for i in range(size))
+
 # Teste	
 # print(ddgquery("Madonna"))
 # print(ddgquery("Duckduckgo"))
 # print(ethereum())
 # print(weather(-23.5984834927,-46.6766234833))
+# print(newpassword())
+# print(newpassword(16))

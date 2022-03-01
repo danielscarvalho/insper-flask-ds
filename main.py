@@ -47,6 +47,14 @@ def ether():
 def weather(lat, lon):
     return insperds.weather(lat, lon)
 
+@app.route('/safepassword', defaults={'size': ""})
+@app.route('/safepassword/<size>')
+def pwd(size):
+    if (len(size)>0):
+        return insperds.newpassword(int(size))
+    else: 
+        return insperds.newpassword()
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 
