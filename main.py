@@ -3,6 +3,7 @@ from flask import Flask
 from flask import request
 from datetime import datetime
 import insperds
+import math
 
 app = Flask(__name__)
 
@@ -58,7 +59,17 @@ def pwd(size):
 @app.route('/sub/<a>/<b>')
 def sub(a, b):
     return str(float(a) - float(b))
+
+@app.route('/power/<a>/<b>')
+def power(a, b):
+    a_float = float(a)
     
+    try:
+        b_float = float(b)
+    except:
+        return str(a_float * a_float)
+    
+    return str(math.power(a_float, b_float))
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
-
