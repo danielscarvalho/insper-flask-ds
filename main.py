@@ -61,7 +61,7 @@ def sub(a, b):
     return str(float(a) - float(b))
 
 @app.route('/power/<a>/<b>')
-def power(a, b):
+def ipower(a, b):
     a_float = float(a)
     
     try:
@@ -69,7 +69,7 @@ def power(a, b):
     except:
         return str(a_float * a_float)
     
-    return str(math.power(a_float, b_float))
+    return str(math.pow(a_float, b_float))
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
