@@ -60,14 +60,16 @@ def pwd(size):
 def sub(a, b):
     return str(float(a) - float(b))
 
-@app.route('/power/<a>/<b>')
-def ipower(a, b):
+@app.route('/power/<a>')
+def power1(a):
     a_float = float(a)
     
-    try:
-        b_float = float(b)
-    except:
-        return str(a_float * a_float)
+    return str(a_float * a_float)
+        
+@app.route('/power/<a>/<b>')
+def power2(a, b):
+    a_float = float(a)
+    b_float = float(b)
     
     return str(math.pow(a_float, b_float))
 
