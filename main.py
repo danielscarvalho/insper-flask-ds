@@ -73,5 +73,12 @@ def power2(a, b):
     
     return str(math.pow(a_float, b_float))
 
+@app.route('/calc/<a>/<b>')
+def power2(a, b):
+    a_float = float(a)
+    b_float = float(b)
+    
+    return str((1-math.pow(a_float, b_float))*math.sqrt(a))
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
