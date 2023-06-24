@@ -74,7 +74,7 @@ def power2(a, b):
     return str(math.pow(a_float, b_float))
 
 @app.route('/calc/<a>/<b>')
-def power2(a, b):
+def calc(a, b):
     a_float = float(a)
     b_float = float(b)
     
