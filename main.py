@@ -78,7 +78,7 @@ def calc(a, b):
     a_float = float(a)
     b_float = float(b)
     
-    return str((1-math.pow(a_float, b_float))*math.sqrt(a))
+    return str((1-math.pow(a_float, b_float))*math.sqrt(a_float))
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
