@@ -85,7 +85,7 @@ def icalcweb(x):
     return str(insperds.icalc(float(x)))
 
 @app.route('/catfact')
-def icatfact(x):
+def icatfact():
     return insperds.catfact()
 
 if __name__ == "__main__":
