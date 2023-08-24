@@ -33,6 +33,16 @@ def newpassword(size=32):
 
     return ''.join(random.choice(characters) for i in range(size))
 
+def icalc(x):
+    if x < 0:
+        return 0
+    else:
+        if x % 2 == 0:
+            return x**x
+        else:
+            return x**2
+    
+
 # Teste	
 # print(ddgquery("Madonna"))
 # print(ddgquery("Duckduckgo"))

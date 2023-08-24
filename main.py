@@ -80,5 +80,9 @@ def calc(a, b):
     
     return str((1-math.pow(a_float, b_float))*math.sqrt(a_float))
 
+@app.route('/icalc/<x>')
+def icalcweb(x):
+    return str(insperds.icalc(float(x)))
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
