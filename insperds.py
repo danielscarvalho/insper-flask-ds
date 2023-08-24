@@ -42,6 +42,11 @@ def icalc(x):
         else:
             return x**2
     
+def catfact():
+    URL="https://catfact.ninja/fact"
+    fc_dic = requests.get(URL).json()
+    return fc_dic["fact"]
+
 
 # Teste	
 # print(ddgquery("Madonna"))

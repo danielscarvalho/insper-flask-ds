@@ -84,5 +84,9 @@ def calc(a, b):
 def icalcweb(x):
     return str(insperds.icalc(float(x)))
 
+@app.route('/catfact')
+def icatfact(x):
+    return insperds.catfact()
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
