@@ -60,6 +60,15 @@ def pwd(size):
 def sub(a, b):
     return str(float(a) - float(b))
 
+@app.route('/num/<a>/<b>')
+def num(a, b):
+    a_f = float(a)
+    b_f = float(b)
+    if a_f % 2 == 0:
+        return str(a_f**b_f)
+    else:
+        return str(a_f - b_f)
+
 @app.route('/power/<a>')
 def power1(a):
     a_float = float(a)
