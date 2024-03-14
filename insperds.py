@@ -10,7 +10,19 @@ def ddgquery(query):
     if len(info) > 1:
         return info
     else:
-    	return "Ops! No data found!" 
+        res=""
+
+        for topic in ddg['RelatedTopics']:
+            try: 
+                res += ("- " + topic['Text'] + "\n")
+            except:
+                # refactor!!!
+                pass
+        
+        if len(res) > 0:
+            return res 
+        else: 
+            return "Ops! No data found!" 
 
 def bitcoins():
     URL="https://www.mercadobitcoin.net/api/BTC/trades/"
