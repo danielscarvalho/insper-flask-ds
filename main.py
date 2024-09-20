@@ -98,10 +98,9 @@ def icalcweb(x):
 def icatfact():
     return insperds.catfact()
     
-@app.route('/media/<m>')
-def media():
-    m = eval(m)
-    return sum(m)/len(m)    
+@app.route('/media/<m>/<n>')
+def media(m, n):
+    return str((float(m)+float(n))/2)    
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
