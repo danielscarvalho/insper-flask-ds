@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from flask import request
 from datetime import datetime
+import platform
 import insperds
 import math
 
@@ -10,7 +11,9 @@ app = Flask(__name__)
 @app.route('/')
 def web_root():
     now = datetime.now()
-    return 'Hey, we have Flask in a Docker container by Insper DS! - ' + str(now) 
+    return 'Hey, we have Flask in a Docker container by Insper DS! - ' + str(now) \
+           + " - " \
+           + platform.version 
 
 @app.route('/core')
 def core():
