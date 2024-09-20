@@ -10,8 +10,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def web_root():
-    now = datetime.now()
-    return 'Hey, we have Flask in a Docker container by Insper DS! - ' + str(now) \
+    now = str(datetime.now())
+    return 'Hey, we have Flask in a Docker container by Insper DS! - ' \
+           + now \
            + " - " \
            + platform.version 
 
