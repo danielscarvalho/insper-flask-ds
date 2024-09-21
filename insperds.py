@@ -1,6 +1,7 @@
 import requests
 import random
 import string
+import statistics
 
 def ddgquery(query):
     URL = "https://api.duckduckgo.com/?format=json&pretty=0&q=" + query
@@ -58,6 +59,19 @@ def catfact():
     URL="https://catfact.ninja/fact"
     fc_dic = requests.get(URL).json()
     return fc_dic["fact"]
+
+
+def describer(list):
+    data = [float(v) for v in list.split(",")]
+    stats = {"mean":statistics.mean(data),
+             "mode":statistics.mode(data),
+             "stdev":statistics.stdev(data),
+             "size":len(data),
+             "max":max(data),
+             "min":min(data)}
+
+    return str(stats)
+ 
 
 
 # Teste	
