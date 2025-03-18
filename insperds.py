@@ -2,7 +2,7 @@ import requests
 import random
 import string
 import statistics
-import datetime
+from datetime import datetime
 
 def ddgquery(query):
     URL = "https://api.duckduckgo.com/?format=json&pretty=0&q=" + query
