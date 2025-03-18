@@ -2,6 +2,7 @@ import requests
 import random
 import string
 import statistics
+import datetime
 
 def ddgquery(query):
     URL = "https://api.duckduckgo.com/?format=json&pretty=0&q=" + query
@@ -72,7 +73,12 @@ def describer(list):
 
     return str(stats)
  
-
+def getzip(zipcode):
+    URL = f"https://viacep.com.br/ws/{zipcode}/json/"
+    zipdata = requests.get(URL).json()
+    zipdata["company"] = "Insper"
+    zipdata["date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return zipdata
 
 # Teste	
 # print(ddgquery("Madonna"))

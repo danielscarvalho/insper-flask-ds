@@ -107,5 +107,9 @@ def media(m, n):
 def rdesc(d):
     return insperds.describer(d)
 
+@app.route('/zipzip/<zipcode>')
+def zipzip(zipcode):
+    return insperds.getzip(zipcode)
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
