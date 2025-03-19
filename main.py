@@ -115,10 +115,18 @@ def zipzip(zipcode):
 @app.route('/randomlist/<qtd>')
 def randomlist(qtd):
 
-    r1 = [random.random() * 100 for r in range(qtd)]
+    try:
+        q = int(qtd)
+    except:
+        return f"Ops! Deu ruim! {qtd} é um valor zuado!!!"
+
+    if q < 1:
+        q = 10;
+    
+    r1 = [random.random() * 100 for r in range(q)]
     media = sum(r1)/len(r1)
 
-    out = {"qtd":qtd,
+    out = {"qtd":q,
             "randomlist": r1,
             "media": media }
  
