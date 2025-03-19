@@ -114,7 +114,7 @@ def zipzip(zipcode):
 
 @app.route('/randomlist/')
 def randomlistnull():
-    randomlist(1)
+    return randomlist(1)
 
 @app.route('/randomlist/<qtd>')
 def randomlist(qtd):
