@@ -5,6 +5,7 @@ from datetime import datetime
 import platform
 import insperds
 import math
+import random
 
 app = Flask(__name__)
 
@@ -110,6 +111,22 @@ def rdesc(d):
 @app.route('/zipzip/<zipcode>')
 def zipzip(zipcode):
     return insperds.getzip(zipcode)
+
+@app.route('/zipzip/<zipcode>')
+def zipzip(zipcode):
+    return insperds.getzip(zipcode)
+
+@app.route('/randomlist/<qtd>')
+def randomlist(qtd):
+
+    r1 = [random.random() * 100 for r in range(qtd)]
+    media = sum(r1)/len(r1)
+
+    out = {"qtd":qtd,
+            "randomlist": r1,
+            "media": media }
+ 
+    return str(out)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
