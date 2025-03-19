@@ -113,8 +113,8 @@ def zipzip(zipcode):
     return insperds.getzip(zipcode)
 
 @app.route('/randomlist/')
-def randomlistnull(qtd):
-    randomlist(qtd)
+def randomlistnull():
+    randomlist(1)
 
 @app.route('/randomlist/<qtd>')
 def randomlist(qtd):
