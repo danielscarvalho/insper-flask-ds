@@ -112,10 +112,6 @@ def rdesc(d):
 def zipzip(zipcode):
     return insperds.getzip(zipcode)
 
-@app.route('/zipzip/<zipcode>')
-def zipzip(zipcode):
-    return insperds.getzip(zipcode)
-
 @app.route('/randomlist/<qtd>')
 def randomlist(qtd):
 
