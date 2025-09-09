@@ -81,7 +81,7 @@ def getzip(zipcode):
     return zipdata
 
 def getgeoip(ip):
-    return(requests.get(f"https://api.hackertarget.com/geoip/?q={ip}").json())
+    return(requests.get(f"https://api.hackertarget.com/geoip/?q={ip}").text)
 
 # Teste	
 # print(ddgquery("Madonna"))
