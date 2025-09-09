@@ -116,6 +116,13 @@ def zipzip(zipcode):
 def randomlistnull():
     return randomlist(1)
 
+@app.route('/megasena/<qtd>')
+def megasena(qtd):
+    if qtd < 0:
+        qtd=1
+    luck_number = [random.sample(range(1, 61), 6) for _ in range(qtd)]
+    return str({"dezenas":luck_number})    
+
 @app.route('/randomlist/<qtd>')
 def randomlist(qtd):
 
