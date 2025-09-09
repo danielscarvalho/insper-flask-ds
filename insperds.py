@@ -80,6 +80,9 @@ def getzip(zipcode):
     zipdata["date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     return zipdata
 
+def getgeoip(ip):
+    return(requests.get(f"https://api.hackertarget.com/geoip/?q={ip}").json())
+
 # Teste	
 # print(ddgquery("Madonna"))
 # print(ddgquery("Duckduckgo"))

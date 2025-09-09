@@ -116,6 +116,15 @@ def zipzip(zipcode):
 def randomlistnull():
     return randomlist(1)
 
+@app.route('/geoip/', defaults={'ip': ""})
+@app.route('/geoip/<ip>')
+def geoip():
+    if len(ip) == 0:
+        ip = request.remote_addr
+
+    return str(insperds.getgeoip(ip))
+
+@app.route('/megasena/', defaults={'qtd': "1"})
 @app.route('/megasena/<qtd>')
 def megasena(qtd):
     qtd_int = int(qtd)
