@@ -103,7 +103,6 @@ def icatfact():
 def media(m, n):
     return str((float(m)+float(n))/2)    
 
-
 @app.route('/describer/<d>')
 def rdesc(d):
     return insperds.describer(d)
@@ -118,7 +117,7 @@ def randomlistnull():
 
 @app.route('/geoip/', defaults={'ip': ""})
 @app.route('/geoip/<ip>')
-def geoip():
+def geoip(ip):
     if len(ip) == 0:
         ip = request.remote_addr
 
