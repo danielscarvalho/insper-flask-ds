@@ -118,9 +118,10 @@ def randomlistnull():
 
 @app.route('/megasena/<qtd>')
 def megasena(qtd):
-    if qtd < 0:
-        qtd=1
-    luck_number = [random.sample(range(1, 61), 6) for _ in range(qtd)]
+    qtd_int = int(qtd)
+    if qtd_int < 0:
+        qtd_int=1
+    luck_number = [random.sample(range(1, 61), 6) for _ in range(qtd_int)]
     return str({"dezenas":luck_number})    
 
 @app.route('/randomlist/<qtd>')
